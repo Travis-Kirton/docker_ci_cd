@@ -11,6 +11,8 @@ script:
 deploy:
   edge: true
   provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
   region: 'eu-west-1'
   app: 'docker_ci_cd'
   env: 'DockerCiCd-env'
@@ -18,5 +20,3 @@ deploy:
   bucket_path: 'docker_ci_cd'
   on:
     branch: master
-  access_key_id: '$AWS_ACCESS_KEY'
-  secret_access_key: '$AWS_SECRET_KEY'
